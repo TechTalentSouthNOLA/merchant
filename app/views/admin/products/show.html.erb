@@ -22,13 +22,13 @@
 
 <p>
   <strong>Brand:</strong>
-  <%= @product.brand %>
+  <%= @product.brand.try(:name) %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= @product.category %>
+  <%= @product.category.try(:name) %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Edit', edit_admin_product_path(@product) %> |
+<%= link_to 'Back', admin_products_path %>
