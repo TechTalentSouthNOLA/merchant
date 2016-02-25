@@ -8,7 +8,13 @@
     <%= f.input :description %>
     <%= f.association :brand %>
     <%= f.association :category %>
-    <%= f.input :avatar, as: :file %>
+
+    <%= f.input :avatar, as: :file, label: "Upload a New Product Image" %>
+    <% if @product.avatar.exists? %>
+      <%= label_tag "Current Image" %>
+      <p><%= image_tag @product.avatar.url(:thumb) %></p>
+      <br>
+    <% end %>
   </div>
 
   <div class="form-actions">

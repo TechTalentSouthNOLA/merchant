@@ -5,10 +5,9 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
+      <th colspan="2">Product</th>
       <th>Current price</th>
       <th>Quantity</th>
-      <th>Description</th>
       <th>Brand</th>
       <th>Category</th>
       <th colspan="3"></th>
@@ -18,10 +17,10 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
+        <td><%= image_tag product.avatar.url(:thumb) %></td>
         <td><%= product.name %></td>
         <td><%= product.current_price %></td>
         <td><%= product.quantity %></td>
-        <td><%= product.description %></td>
         <td><%= product.brand.try(:name) %></td>
         <td><%= product.category.try(:name) %></td>
         <td><%= link_to 'Show', admin_product_path(product) %></td>
