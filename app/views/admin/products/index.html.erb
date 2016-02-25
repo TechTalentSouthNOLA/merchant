@@ -19,7 +19,7 @@
       <tr>
         <td><%= image_tag product.avatar.url(:thumb) %></td>
         <td><%= product.name %></td>
-        <td><%= product.current_price %></td>
+        <td><%= number_to_currency product.current_price %></td>
         <td><%= product.quantity %></td>
         <td><%= product.brand.try(:name) %></td>
         <td><%= product.category.try(:name) %></td>
