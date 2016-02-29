@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # TODO: Set up action mailer domain once we know what our domain will be.
+  # config.action_mailer.default_url_options = { host: "yourdomain.com" }
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 

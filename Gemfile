@@ -38,6 +38,7 @@ gem 'font-awesome-rails'
 gem 'stamp'
 gem 'simple_form'
 gem "paperclip", "~> 4.3"
+gem 'devise'
 
 group :development, :test do
   gem 'pry-byebug'
