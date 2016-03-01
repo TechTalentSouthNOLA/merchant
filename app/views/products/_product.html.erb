@@ -1,0 +1,48 @@
+<div class="col-sm-4">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= image_tag product.avatar.url(:medium), class: "img-responsive img-rounded" %>
+
+      <span class="pull-right">
+        <h5><%= number_to_currency product.current_price %></h5>
+      </span>
+      <h5><%= product.name %></h5>
+
+      <span class="pull-right">
+        <%# TODO: Make live when we have carts model %>
+        <button class="btn btn-primary btn-xs">Add to Cart</button>
+      </span>
+      <a href="#" data-toggle="modal" data-target="#product_<%= product.id %>">
+        <small>quick info</small>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="product_<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= product.name %></h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-sm-8">
+            <%= image_tag product.avatar.url(:large), class: "img-responsive img-rounded" %>
+          </div>
+          <div class="col-sm-4">
+            <p><%= product.description %></p>
+            <h5><%= number_to_currency product.current_price %></h5>
+            <%# TODO: Make live when we have carts model %>
+            <button type="button" class="btn btn-primary">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
