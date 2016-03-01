@@ -1,6 +1,12 @@
 <h1>Welcome to Mardi Paws!</h1>
 <p>Dress your pup like every day is Mardi Gras.</p>
 
+<% if params[:category_id] %>
+  <h3>All <%= @category.name.titleize %></h3>
+<% else %>
+  <h3>All Products</h3>
+<% end %>
+
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-sm-4">

@@ -1,5 +1,20 @@
 <ul class="nav navbar-nav">
-  <li><%= link_to 'Shop', shop_path %></li>
+  <!-- Shop Dropdown -->
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+
+      <!-- Loop through each category to show name and custom params for shop link -->
+      <% Category.order(:name).each do |category| %>
+        <li><%= link_to category.name.titleize, shop_path(category_id: category.id) %></li>
+      <% end %>
+
+      <!-- Separate section for all products (no params) -->
+      <li role="separator" class="divider"></li>
+      <li><%= link_to 'All Products', shop_path %></li>
+    </ul>
+  </li>
+
   <li><%= link_to 'About', about_path %></li>
 </ul>
 
