@@ -1,0 +1,11 @@
+<!-- Search form -->
+<span class="pull-right">
+  <%= form_tag(shop_path, method: :get, role: "search", class: "form-inline") do %>
+    <div class="form-group">
+      <%# TODO: hide the search label %>
+      <%# label_tag :search, class: "sr-only" %>
+      <%= text_field_tag(:search, nil, placeholder: "Search products", class: "form-control input-sm") %>
+    </div>
+    <%= submit_tag("Search", class: "btn btn-default btn-sm") %>
+  <% end %>
+</span>

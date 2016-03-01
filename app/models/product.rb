@@ -13,4 +13,8 @@ class Product < ActiveRecord::Base
   validates_numericality_of :current_price, greater_than_or_equal_to: 0.01
 
   validates_numericality_of :quantity, greater_than_or_equal_to: 0
+
+  def self.search_by_name_or_description(string)
+    where("name LIKE ? OR description LIKE ?", "%#{string}%", "%#{string}%")
+  end
 end
