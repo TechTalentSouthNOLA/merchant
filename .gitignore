@@ -15,3 +15,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore all avatar photos for products (only used in development)
+/public/system/products/avatars
