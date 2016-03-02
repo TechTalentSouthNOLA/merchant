@@ -9,8 +9,7 @@
       <h5><%= product.name %></h5>
 
       <span class="pull-right">
-        <%# TODO: Make live when we have carts model %>
-        <button class="btn btn-primary btn-xs">Add to Cart</button>
+        <%= button_to "Add to Cart", line_items_path(product_id: product.id), class: "btn btn-primary btn-xs" %>
       </span>
       <a href="#" data-toggle="modal" data-target="#product_<%= product.id %>">
         <small>quick info</small>
@@ -37,8 +36,7 @@
           <div class="col-sm-4">
             <p><%= product.description %></p>
             <h5><%= number_to_currency product.current_price %></h5>
-            <%# TODO: Make live when we have carts model %>
-            <button type="button" class="btn btn-primary">Add to Cart</button>
+            <%= button_to "Add to Cart", line_items_path(product_id: product.id), class: "btn btn-primary" %>
           </div>
         </div>
 
