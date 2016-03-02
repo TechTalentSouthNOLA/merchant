@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     resources :categories
   end
 
+  # Changed this to a singular resource so that the :id param is NOT in the url (for security and we just don't need it to show up)
+  resource :cart, only: [:edit, :update, :destroy]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
