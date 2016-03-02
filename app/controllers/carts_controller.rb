@@ -12,10 +12,10 @@ class CartsController < ApplicationController
     if @cart.destroy
       session[:cart_id] = nil
       flash[:notice] = "Cart successfully deleted."
-      redirect_to shop_path
+      redirect_to shop_url
     else
       flash[:alert] = "Could not delete cart."
-      redirect_to edit_cart_path
+      redirect_to edit_cart_url
     end
   end
 end
