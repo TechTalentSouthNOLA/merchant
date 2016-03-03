@@ -13,9 +13,14 @@
         <td><%= image_tag item.product.avatar.url(:thumb), class: "img-responsive img-thumbnail" %></td>
         <td>
           <h5><%= item.product.name %></h5>
-          <p><%= link_to fa_icon('trash', text: 'Remove Item'), line_item_path(item.id), method: :delete, class: 'btn btn-default btn-xs' %></p>
+          <p><%= link_to fa_icon('trash', text: 'Remove Item'), line_item_path(item.id), method: :delete, class: 'btn btn-danger btn-xs' %></p>
         </td>
-        <td><%= item.quantity %></td>
+        <td>
+          <%= simple_form_for(item, html: {class: 'form-inline'}) do |item_fields| %>
+            <%= item_fields.input :quantity, label: false %>
+            <%= item_fields.button :submit, "Save" %>
+          <% end %>
+        </td>
         <td><%= number_to_currency item.price %></td>
         <td><%= number_to_currency item.total %></td>
       </tr>
