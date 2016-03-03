@@ -1,0 +1,9 @@
+<h1>Order Number <%= @order.id %></h1>
+
+<div class="well">
+  <h4>Shipped To</h4>
+  <%= @order.shipping_name %><br>
+  <%= @order.shipping_address %><br>
+</div>
+
+<%= render @order %>
