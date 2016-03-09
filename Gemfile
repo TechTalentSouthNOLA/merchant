@@ -42,6 +42,7 @@ gem 'figaro'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'aws-sdk', '< 2'
 end
 
 group :development, :test do
