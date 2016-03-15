@@ -1,0 +1,3 @@
+<h1>Thank you for your order, <%= @user.email %>!</h1>
+
+<p>Your order number is <%= @order.id %> and your total was <%= number_to_currency @order.subtotal %>.</p>
