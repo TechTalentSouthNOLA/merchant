@@ -1,3 +1,5 @@
+$brand-primary: #6F499C;
+
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -10,4 +12,11 @@ body {
 
 .jumbotron {
   margin-top: -20px;
+  background-image: image-url("weiner_float.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  color: white;
 }
