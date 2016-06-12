@@ -5,9 +5,6 @@ class CartsController < ApplicationController
   def edit
   end
 
-  def update
-  end
-
   def destroy
     if @cart.destroy
       session[:cart_id] = nil

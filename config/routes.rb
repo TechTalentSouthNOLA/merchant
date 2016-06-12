@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   # Changed this to a singular resource so that the :id param is NOT in the url (for security and we just don't need it to show up)
-  resource :cart, only: [:edit, :update, :destroy]
+  resource :cart, only: [:edit, :destroy]
 
   # Regular plural resources
   resources :line_items, only: [:create, :destroy, :update]

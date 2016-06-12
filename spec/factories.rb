@@ -17,4 +17,7 @@ FactoryGirl.define do
     category
   end
 
+  factory :cart do
+  end
+
 end
